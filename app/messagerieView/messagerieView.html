@@ -1,0 +1,11 @@
+
+
+<div style="text-align: center; min-height: 100vh;">
+    <div style="text-align: center; height: 60vh;">
+        <div ng-repeat="project in projects track by $index">
+            <h3 style="text-align: center; margin-top: 25%; text-decoration: underline">{{ message.auteur }}</h3>
+            <p style="text-align: center">{{ project.message }}</p>
+            <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(projet)">
+        </div>
+    </div>
+</div>

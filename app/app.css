@@ -1,5 +1,7 @@
 /* app css stylesheet */
-
+body, html {
+  height: 100%;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +24,11 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+@media (max-width: 767px) {
+  .carousel-indicators,
+  .carousel-indicators li {
+    cursor: default;
+    pointer-events: none;
+  }
 }
