@@ -10,11 +10,12 @@ angular.module('myApp.projectList', ['ngRoute', 'ui.bootstrap', 'ngTouch'])
         });
     }])
 
-    .controller('ProjectListCtrl', function($scope, $location, projectService) {
+    .controller('ProjectListCtrl', function($scope, $location, projectService, $rootScope) {
         $scope.projectList = projectService.getProjects() ;
 
-        $scope.goToMessagerie = function () {
-            $location.path('/messagerieView')
+        $scope.goToMessagerie = function (projet) {
+            projectService.setSelectedProject(projet);
+            $location.path('/messagerieView');
         }
 
     });

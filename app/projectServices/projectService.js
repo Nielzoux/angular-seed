@@ -3,6 +3,8 @@
 angular.module('myApp.projectService', [])
 
 .service('projectService', function($http) {
+    var selectedProject;
+
     var projects = [{
         name: 'projet 1',
         description: 'ceci est un projet',
@@ -89,8 +91,19 @@ angular.module('myApp.projectService', [])
         return projects;
     };
 
+    var setSelectedProject = function(proj) {
+        console.log(proj);
+        selectedProject = proj;
+    };
+
+    var getSelectedProject = function() {
+        return selectedProject;
+    };
+
     return {
         addProject: addProject,
-        getProjects: getProjects
+        getProjects: getProjects,
+        setSelectedProject: setSelectedProject,
+        getSelectedProject: getSelectedProject
     };
 });

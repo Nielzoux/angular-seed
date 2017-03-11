@@ -8,7 +8,7 @@
             <p style="text-align: center">{{ project.description }}</p>
             <p ng-if="project.interesse > 1" style="text-align: center">{{ project.interesse }} personne(s) sont déja interessée(s) par ce projet</p>
             <p ng-if="project.interesse <= 1" style="text-align: center">{{ project.interesse }} personne est déja interessée par ce projet</p>
-            <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(projet)">
+            <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(project)">
         </slide>
     </carousel>
 </div>

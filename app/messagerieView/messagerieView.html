@@ -1,11 +1,21 @@
 
-
-<div style="text-align: center; min-height: 100vh;">
+<div style="text-align: center; min-height: 70%;">
     <div style="text-align: center; height: 60vh;">
-        <div ng-repeat="project in projects track by $index">
-            <h3 style="text-align: center; margin-top: 25%; text-decoration: underline">{{ message.auteur }}</h3>
-            <p style="text-align: center">{{ project.message }}</p>
-            <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(projet)">
+        <div ng-repeat="message in selectedProject.messages track by $index">
+            <h3 style="text-align: center; padding-bottom: 2%; text-decoration: underline">{{ message.auteur }}: </h3>
+            <p style="text-align: center">{{ message.message }}</p>
         </div>
+    </div>
+</div>
+
+<div>
+<input type="button" value="ajouter un message" style="display: block; margin: auto" ng-click="showNewMessageBox()"/>
+
+    <div ng-show="showNewMessage" style="padding-top: 2%">
+    <form>
+        <input style="display: block; margin: auto" type="text" placeholder="Votre nom" ng-model="name">
+        <input style="display: block; margin: auto" type="text" placeholder="Entrez votre message ici" ng-model="newMessage">
+        <input style="display: block; margin: auto" type="submit" ng-click="addMessage()">
+    </form>
     </div>
 </div>
