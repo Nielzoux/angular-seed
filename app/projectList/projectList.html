@@ -1,14 +1,16 @@
 
-
-<div style="text-align: center; min-height: 100vh;">
-    <carousel style="text-align: center; height: 60vh;">
-        <slide ng-repeat="project in projectList track by $index" active="project.active">
-            <h3 style="text-align: center; margin-top: 25%">{{ project.name }}</h3>
-            <p style="text-align: center">{{ project.auteur }}</p>
-            <p style="text-align: center">{{ project.description }}</p>
-            <p ng-if="project.interesse > 1" style="text-align: center">{{ project.interesse }} personne(s) sont déja interessée(s) par ce projet</p>
-            <p ng-if="project.interesse <= 1" style="text-align: center">{{ project.interesse }} personne est déja interessée par ce projet</p>
-            <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(project)">
-        </slide>
-    </carousel>
+<div class="container">
+    <div style="text-align: center; min-height: 100vh;">
+        <carousel style="text-align: center; height: 60vh;">
+            <slide ng-repeat="project in projectList track by $index" active="project.active">
+                <img src="project.image">
+                <h3 style="text-align: center; margin-top: 25%">{{ project.name }}</h3>
+                <p style="text-align: center">{{ project.auteur }}</p>
+                <p style="text-align: center">{{ project.description }}</p>
+                <p ng-if="project.interesse > 1" style="text-align: center">{{ project.interesse }} personne(s) sont déja interessée(s) par ce projet</p>
+                <p ng-if="project.interesse <= 1" style="text-align: center">{{ project.interesse }} personne est déja interessée par ce projet</p>
+                <input style="text-align: center ;" type="button" value="Ca m'interesse !" ng-click="goToMessagerie(project)">
+            </slide>
+        </carousel>
+    </div>
 </div>

@@ -13,8 +13,9 @@
 
     <div ng-show="showNewMessage" style="padding-top: 2%">
     <form>
-        <input style="display: block; margin: auto" type="text" placeholder="Votre nom" ng-model="name">
-        <input style="display: block; margin: auto" type="text" placeholder="Entrez votre message ici" ng-model="newMessage">
+        <input required style="padding-bottom:2px; display: block; margin: auto" type="text" placeholder="Votre nom" ng-model="name" minlength="1" maxlength="15">
+        <textarea  required style="margin-top: 2px;width:500px !important;height:150px !important;display: block; width:20% ;margin: auto" type="text" placeholder="Entrez votre message ici"
+                   ng-model="newMessage" minlength="1" maxlength="200" cols="40" rows="5" ></textarea>
         <input style="display: block; margin: auto" type="submit" ng-click="addMessage()">
     </form>
     </div>

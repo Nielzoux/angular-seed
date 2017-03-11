@@ -87,12 +87,15 @@ angular.module('myApp.projectService', [])
         projects.push(newObj);
     };
 
+    var setProjects = function(projects) {
+        projects = projects;
+    };
+
     var getProjects = function(){
         return projects;
     };
 
     var setSelectedProject = function(proj) {
-        console.log(proj);
         selectedProject = proj;
     };
 
@@ -104,6 +107,7 @@ angular.module('myApp.projectService', [])
         addProject: addProject,
         getProjects: getProjects,
         setSelectedProject: setSelectedProject,
-        getSelectedProject: getSelectedProject
+        getSelectedProject: getSelectedProject,
+        setProjects: setProjects
     };
 });

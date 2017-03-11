@@ -9,7 +9,7 @@ angular.module('myApp.messagerieView', ['ngRoute'])
         });
     }])
 
-    .controller('MessagerieViewCtrl', function ($scope, $location, projectService, $rootScope) {
+    .controller('MessagerieViewCtrl', function ($scope, $location, projectService) {
         $scope.selectedProject= projectService.getSelectedProject() ;
 
         $scope.name;
@@ -26,5 +26,8 @@ angular.module('myApp.messagerieView', ['ngRoute'])
             });
             $scope.name = '';
             $scope.newMessage = ''
-;        }
+       }
+
+       projectService.setProjects()
+       projectService.setSelectedProject($scope.selectedProject);
     });
